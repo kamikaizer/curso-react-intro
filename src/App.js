@@ -4,28 +4,81 @@ import { TodoList } from './TodoList.js';
 import { TodoItem } from './TodoItems.js';
 import { CreateTodoButton } from './CreateTodoButton.js';
 
-
 import './App.css';
+import React from 'react';
 
-function App() {
+// Primera forma de renderizar creando un div
+
+// function App() {
+//   return (
+//     <div className="App">
+
+//       <TodoCounter completed={16} total={25}/>
+//       <TodoSearch />
+
+//       <TodoList>
+//         <TodoItem />
+//         <TodoItem />
+//         <TodoItem />
+//       </TodoList>
+
+//       <CreateTodoButton />
+
+//     </div>
+//   );
+// }
+
+// segunda forma de renderizar usando React.Fragment
+
+// function App() {
+//   return (
+//     <React.Fragment>
+//       <TodoCounter completed={16} total={25} />
+//         <TodoSearch />
+
+//           <TodoList>
+//             <TodoItem />
+//             <TodoItem />
+//             <TodoItem />
+//           </TodoList>
+
+//         <CreateTodoButton />
+//     </React.Fragment>
+//    );
+// }
+
+// Tercera forma de renderizar usando array
+// se declaran los todoitems mediante array para que sean renderizados despues en el todolist
+
+const defaultTodos = [
+  { text: 'Cortar cebolla', completed: false },
+  { text: 'Cortar papas', completed: true },
+  { text: 'terminar el curso', completed: false },
+  { text: 'llorar con la llorona', completed: false },
+];
+
+function App () {
   return (
-    <div className="App">
+    <React.Fragment>
+       <TodoCounter completed={16} total={25} />
 
-      <TodoCounter />
-      <TodoSearch />
+         <TodoSearch />
 
-      <TodoList>
-        <TodoItem />
-        <TodoItem />
-        <TodoItem />
-      </TodoList>
+           <TodoList>
+            {defaultTodos.map(todo => (
+              <TodoItem 
+                key={todo.text} 
+                text={todo.text}
+                completed={todo.completed}
+              />
+            ))}
+           </TodoList>
 
-      <CreateTodoButton />
+         <CreateTodoButton />
 
-    </div>
-  );
+    </React.Fragment>
+  )
 }
-
 
 
 
