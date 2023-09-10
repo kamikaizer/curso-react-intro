@@ -1,25 +1,37 @@
-import logo from './platzi.webp';
+import { TodoCounter } from './TodoCounter.js';
+import { TodoSearch } from './TodoSearch.js';
+import { TodoList } from './TodoList.js';
+import { TodoItem } from './TodoItems.js';
+import { CreateTodoButton } from './CreateTodoButton.js';
+
+
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edita el archivo <code>src/App.js</code> y guarda para recargar.
-        </p>
-        <a
-          className="App-link"
-          href="https://platzi.com/reactjs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <TodoCounter />
+      <TodoSearch />
+
+      <TodoList>
+        <TodoItem />
+        <TodoItem />
+        <TodoItem />
+      </TodoList>
+
+      <CreateTodoButton />
+
     </div>
   );
 }
 
+
+
+
+
+// TodoItem es un componente reutilizable
+
 export default App;
+// export default TodoItem; 
+// se puede llamar asi o como en la linea 8 <TodoItem />
