@@ -1,6 +1,8 @@
+import './CreateTodoButton.css'
+
 function CreateTodoButton() {
     return (
-      <button>agergar</button>  
+      <button>+</button>  
     );
   }
 

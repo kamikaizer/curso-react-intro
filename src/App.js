@@ -1,11 +1,11 @@
+import React from 'react';
 import { TodoCounter } from './TodoCounter.js';
 import { TodoSearch } from './TodoSearch.js';
 import { TodoList } from './TodoList.js';
 import { TodoItem } from './TodoItems.js';
 import { CreateTodoButton } from './CreateTodoButton.js';
 
-import './App.css';
-import React from 'react';
+
 
 // Primera forma de renderizar creando un div
 
@@ -29,6 +29,7 @@ import React from 'react';
 // }
 
 // segunda forma de renderizar usando React.Fragment
+// React.fragment se puede escribir <React.Fragment> o simplemente <>, ambos con su respectivo cierre
 
 // function App() {
 //   return (
@@ -75,7 +76,6 @@ function App () {
            </TodoList>
 
          <CreateTodoButton />
-
     </React.Fragment>
   )
 }
